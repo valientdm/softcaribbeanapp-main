@@ -1,0 +1,85 @@
+<style>
+ 
+  /* Style the tab */
+  .tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 200px;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current "tab button" class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    float: right;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    width: 70%;
+    border-left: none;
+    height: 500px;
+    overflow-y: scroll;
+  }
+
+  #title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  #menu {
+    margin-top: 10px;
+    text-align: center;
+  }
+  </style>
+
+<div id="title">
+  <h2>{{ title }}</h2>
+  <hr>
+</div>
+  
+  <div class="tab">
+    <div id="menu">
+      <h5>Menu</h5>
+    </div>
+    <hr>
+    <button class="tablinks" onclick="openTab(event, 'patients')" id="defaultOpen">Patients</button>
+    <button class="tablinks" onclick="openTab(event, 'new-person')">New Person</button>
+  </div>
+  
+  <div id="patients" class="tabcontent" style="display: none;">
+    <h3>Patients registered</h3>
+    <app-patient-list></app-patient-list>
+  </div>
+  
+  <div id="new-person" class="tabcontent" style="display: none;">
+    <h3>New Person</h3>
+    <app-new-person></app-new-person>
+  </div>
+  
+  
+  
